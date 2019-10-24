@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="YvxBRXyfkAsuEUIdm4im2gi5YJt163SK6JV10NP8">
+    <title>首页</title>
+    <meta name="Description" content="前后端个人技术博客,技术分享学习">
+    <meta name="Keywords" content="HTML,css, javascript,php,python,web前端,后端,个人博客,技术分享,技术交流,博客,开发者博客,技术博客">
+    <meta name="author" content="jayafs" />
+    <link rel="stylesheet" href="./styles/css/learnku.css">
+    <link rel="stylesheet" href="./styles/css/prism.css">
+    <link rel="stylesheet" href="./styles/css/swiper.min.css">
+    <link rel="stylesheet" href="./styles/css/font-awesome.min.css">
+    <style type="text/css">
+    .ui.top.menu {
+        margin-bottom: 0;
+    }
+
+    .swiper-slide {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .swiper-slide span {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+
+    .swiper-slide img {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        max-width: 1200px;
+    }
+    </style>
+    <script type="text/javascript">
+    window.Config = {
+        'token': "YvxBRXyfkAsuEUIdm4im2gi5YJt163SK6JV10NP8",
+        'isApi': false,
+        'url': "https://www.learnku.net",
+        'routes': {
+            'images_domain': "http://images.learnku.net",
+            'cdns_domain': "http://cdns.learnku.net",
+            'upload_image': "http://www.learnku.net/api/images",
+            'api_search': "http://www.learnku.net/api/search",
+            'search': "http://www.learnku.net/search",
+        }
+    };
+    </script>
+</head>
+
+<body class="pushable index-page">
+    <div class="pusher">
+        <div class="main container" style="min-height: 80vh;">
+            <nav class="ui main borderless menu top stackable" id="topnav">
+                <div class="ui container">
+                    <a href="/" class="item secondary">
+                        首页
+                    </a>
+                    <a href="./blogs.html" class="item secondary">
+                        博客
+                    </a>
+                    <div class="ui simple item dropdown article stackable nav-user-item  secondary">
+                        教程 <i class="dropdown icon"></i>
+                        <div class="ui menu stackable">
+                            <a href="./courses.html" class="item">
+                                <i class="fa fa-home"></i> 实战教程首页
+                            </a>
+                            <a class="item" href="./articles.html" style="padding-right: 36px!important;">
+                                <img class="ui avatar image" src="./images/banner1.jpg" style="width:20px;height:20px;margin-top: 0;margin-bottom: 0;">
+                                《Vue开发实战》
+                            </a>
+                            <a class="item" href="./articles.html" style="padding-right: 36px!important;">
+                                <img class="ui avatar image" src="./images/banner2.jpg" style="width:20px;height:20px;margin-top: 0;margin-bottom: 0;">
+                                《PHP使用手册》
+                            </a>
+                        </div>
+                    </div>
+                    <a href="./aboutus.html" class="item secondary">
+                        关于本站
+                    </a>
+                    <form id="header-search-app" class="ui fluid category search item secondary">
+                        <div class="ui input">
+                            <select class="ui compact selection dropdown header-search-left" v-model="form.search_type" id="header-search-left">
+                                <option value="is_all">所有</option>
+                                <option selected="selected" value="is_blog">文章</option>
+                            </select>
+                            <input class="prompt header-search-right" type="text" placeholder="搜索" autocomplete="off" @input.stop="search($event)" @focus.stop="search($event)" name="q" data-value="" v-model="form.q">
+                            <i class="fa fa-search input-search-right-icon"></i>
+                        </div>
+                        <div class="results transition" :class="{ visible:  search_blog_results.length && search_has_results }" id="search-results">
+                            <a class="result" v-for="item in search_blog_results" :href="item.href">
+                                <div class="content">
+                                    <div class="title" v-text="item.title"></div>
+                                    <div class="description" v-text="item.excerpt"></div>
+                                </div>
+                            </a>
+                            <a :href="search_all_url" class="action"><i class="fa fa-search"></i>搜全站</a>
+                        </div>
+                        <div class="results transition" :class="{ visible: search_no_results }">
+                            <div class="message empty">
+                                <div class="header">结果为空</div>
+                                <div class="description">搜索结果为空！</div>
+                                <a :href="search_all_url" class="action ui button mt-3 fluid">
+                                    <i class="fa fa-search"></i>
+                                    搜全站
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                    <div class=" right menu stackable secondary">
+                        <div class="item rm-link-color">
+                            <a class="mr-4 no-pjax login_required" href="./login.html"><i class="fa fa-sign-in"></i> 登录
+                            </a>
+                            <a class="no-pjax" href="./register.html" style="margin-left: 10px;"><i class="fa fa-user-plus"></i> 注册 </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Swiper -->
+            <div class="swiper-container" style="height: 300px;">
+                <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="./courses.html">
+                        <span class="before" style="background: #18a467"></span>
+                        <img src="./images/banner1.jpg" alt="Vue开发实战">
+                        <span class="after" style="background: #8ed5b7"></span>
+                    </a>
+                    <a class="swiper-slide" href="./courses.html">
+                        <span class="before" style="background: #6581e4"></span>
+                        <img src="./images/banner2.jpg" alt="PHP使用手册">
+                        <span class="after" style="background: #5d7ae0"></span>
+                    </a>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div style="background-color: #fff">
+                <div class="ui vertical stripe segment">
+                    <div class="ui centered grid container main stackable blog" style="">
+                        <div class="twelve wide column pull-right main" style="margin-bottom: 3rem;">
+                            <div class="ui segment article-content">
+                                <div class="extra-padding">
+                                    <h2 class="ui block header">
+                                        <i class="fa fa-mortar-board"></i>
+                                        <div class="content">优质文章</div>
+                                    </h2>
+                                    <div class="ui feed topic-list rm-link-color mt-0">
+                                        <div class="event pt-3 pb-0 mb-0">
+                                            <div class="label mt-1" style="width: 3.2em;">
+                                                <a href="./articlesDetail.html">
+                                                    <img class="lazy" data-original="http://images.learnku.net/uploads/images/avatars/201904/03/1_1554279691_yWcdyIk4Lq.png" alt="" style="border: 1px solid #ddd;padding: 2px;">
+                                                </a>
+                                            </div>
+                                            <div class="content ml-3">
+                                                <div class="summary " style="color: #555;">
+                                                    <a href="http://www.learnku.net/blog/articles/1" title="Laravel Artisan 命令工具使用技巧" class="title">
+                                                        Laravel Artisan 命令工具使用技巧
+                                                    </a>
+                                                </div>
+                                                <div class="meta mt-2 mb-2">
+                                                    <div class="date" style="font-size: 13px;margin: 7px 0 0 0;">
+                                                        <a href="http://www.learnku.net/blog/categories/3" data-tooltip="分类" title="Laravel 5.5">
+                                                            <i class="fa fa-folder-o"></i> Laravel 5.5
+                                                        </a>
+                                                        <span class="divider">|</span>
+                                                        <a class="" data-tooltip="2019-02-27 11:07:02">
+                                                            发布于 <span title="2019-02-27 11:07:02">7个月前</span>
+                                                        </a>
+                                                        <span class="divider">|</span>
+                                                        <a>
+                                                            阅读 1316
+                                                        </a>
+                                                        <span class="divider">|</span>
+                                                        <a>
+                                                            评论 6
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item-meta mt-2 text-right" style="color:#ccc;font-size: 12px;width: 150px;">
+                                                <a class="ui " href="http://www.learnku.net/blog/articles/1"><i class="mr-1 fa fa-thumbs-up"></i> </a>
+                                                <span style="margin: 0px 4px;text-align: center;font-size: 13px;">/</span>
+                                                <a class="ui  popover" data-content="活跃于：1分钟前" href="http://www.learnku.net/blog/articles/1">
+                                                    1分钟前
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="event pt-3 pb-0 mb-0">
+                                            <div class="label mt-1" style="width: 3.2em;">
+                                                <a href="http://www.learnku.net/users/1">
+                                                    <img class="lazy" data-original="http://images.learnku.net/uploads/images/avatars/201904/03/1_1554279691_yWcdyIk4Lq.png" alt="" style="border: 1px solid #ddd;padding: 2px;">
+                                                </a>
+                                            </div>
+                                            <div class="content ml-3">
+                                                <div class="summary " style="color: #555;">
+                                                    <a href="http://www.learnku.net/blog/articles/7" title="TP5封装一个API接口JSON返回类" class="title">
+                                                        TP5封装一个API接口JSON返回类
+                                                    </a>
+                                                </div>
+                                                <div class="meta mt-2 mb-2">
+                                                    <div class="date" style="font-size: 13px;margin: 7px 0 0 0;">
+                                                        <a href="http://www.learnku.net/blog/categories/2" data-tooltip="分类" title="PHP">
+                                                            <i class="fa fa-folder-o"></i> PHP
+                                                        </a>
+                                                        <span class="divider">|</span>
+                                                        <a class="" data-tooltip="2019-02-27 11:07:02">
+                                                            发布于 <span title="2019-02-27 11:07:02">7个月前</span>
+                                                        </a>
+                                                        <span class="divider">|</span>
+                                                        <a>
+                                                            阅读 931
+                                                        </a>
+                                                        <span class="divider">|</span>
+                                                        <a>
+                                                            评论 1
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item-meta mt-2 text-right" style="color:#ccc;font-size: 12px;width: 150px;">
+                                                <a class="ui " href="http://www.learnku.net/blog/articles/7"><i class="mr-1 fa fa-thumbs-up"></i> </a>
+                                                <span style="margin: 0px 4px;text-align: center;font-size: 13px;">/</span>
+                                                <a class="ui  popover" data-content="活跃于：1小时前" href="http://www.learnku.net/blog/articles/7">
+                                                    1小时前
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="pagination">
+                                        <li class="disabled"><span>&laquo;</span></li>
+                                        <li class="active"><span>1</span></li>
+                                        <li><a href="http://www.learnku.net?page=2">2</a></li>
+                                        <li><a href="http://www.learnku.net?page=3">3</a></li>
+                                        <li><a href="http://www.learnku.net?page=4">4</a></li>
+                                        <li><a href="http://www.learnku.net?page=5">5</a></li>
+                                        <li><a href="http://www.learnku.net?page=6">6</a></li>
+                                        <li><a href="http://www.learnku.net?page=7">7</a></li>
+                                        <li><a href="http://www.learnku.net?page=8">8</a></li>
+                                        <li><a href="http://www.learnku.net?page=9">9</a></li>
+                                        <li><a href="http://www.learnku.net?page=10">10</a></li>
+                                        <li><a href="http://www.learnku.net?page=2" rel="next">&raquo;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="js-computed-height-left four wide column pull-left sidebar clear" style="padding-right: 0px;">
+                            <div class="item header blog-article sidebar" style="height:auto !important;">
+                                <div class="ui segment orange text-center" style="padding: 25px;">
+                                    刻意记录，每日精进。
+                                </div>
+                                <div class="ui segment">
+                                    <div class="ui three statistics">
+                                        <div class="ui huge statistic">
+                                            <div class="value">185</div>
+                                            <div class="label">文章</div>
+                                        </div>
+                                        <div class="ui huge statistic">
+                                            <div class="value">35635 </div>
+                                            <div class="label">浏览</div>
+                                        </div>
+                                        <div class="ui huge statistic">
+                                            <div class="value">11 </div>
+                                            <div class="label">讨论</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui card tag-active-user-card popular-card responsive">
+                                    <div class="content">
+                                        <span class="">文章归档</span>
+                                        <a href="http://www.learnku.net/blog/articles" class="rm-link-color pull-right ui popover" style="font-size: 15px;margin-right: 8px;" data-content="所有文章">
+                                            <i class="fa fa-list-alt"></i>
+                                        </a>
+                                    </div>
+                                    <div class="extra content ">
+                                        <div class="ui list readmore" style="padding: 8px; max-height: none;">
+                                            <a class="item" href="" style="line-height: 22px;">
+                                                <span class=" pull-right" style="color:inherit">30 篇</span>
+                                                2019 年 03 月
+                                            </a>
+                                            <a class="item" href="" style="line-height: 22px;">
+                                                <span class=" pull-right" style="color:inherit">46 篇</span>
+                                                2019 年 04 月
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui card tag-active-user-card blog-tags responsive">
+                                    <div class="content">
+                                        <span class="">个人分类</span>
+                                    </div>
+                                    <div class="ui large vertical fluid pointing menu" style="border-left: 0;border-right: 0;border-bottom: 0;margin-top: 0;">
+                                        <a class="item" href="http://www.learnku.net/blog/categories/1">
+                                            前端
+                                            <div class="ui small label">10</div>
+                                        </a>
+                                        <a class="item" href="http://www.learnku.net/blog/categories/2">
+                                            PHP
+                                            <div class="ui small label">29</div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ui card tag-active-user-card blog-tags responsive">
+                                    <div class="content">
+                                        <span class="">博客标签</span>
+                                    </div>
+                                    <div class="extra content readmore" style="padding-bottom: 18px; max-height: none;">
+                                        <a class="ui label basic" href="http://www.learnku.net/blog/tags/12">
+                                            javascript
+                                            <div class="detail">4</div>
+                                        </a>
+                                        <a class="ui label basic" href="http://www.learnku.net/blog/tags/26">
+                                            vue
+                                            <div class="detail">3</div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ui card tag-active-user-card popular-card responsive" style="font-size: 13px;">
+                                    <div class="ui secondary pointing menu" style="margin-bottom: 5px;border-bottom: 2px solid rgba(34, 36, 38, 0.1);">
+                                        <a class="item active" data-tab="first">最新文章</a>
+                                        <a class="item" data-tab="second">最受欢迎</a>
+                                    </div>
+                                    <div class="ui bottom attached tab active" data-tab="first">
+                                        <div class="ui middle aligned divided  list" style="padding: 0px 15px;margin-top: 0px;margin-bottom: 5px;">
+                                            <a class="item" href="http://www.learnku.net/blog/articles/185">
+                                                ElasticSearch 单机伪集群搭建
+                                            </a>
+                                            <a class="item" href="http://www.learnku.net/blog/articles/184">
+                                                * 数据库知识文案
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ui bottom attached tab" data-tab="second">
+                                        <div class="ui middle aligned divided  list" style="padding: 0px 15px;margin-top: 0px;">
+                                            <a class="item" href="http://www.learnku.net/blog/articles/1">
+                                                Laravel Artisan 命令工具使用技巧
+                                            </a>
+                                            <a class="item" href="http://www.learnku.net/blog/articles/7">
+                                                TP5封装一个API接口JSON返回类
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="ui inverted vertical footer segment" style="max-height: 220px;">
+            <div class="ui center aligned container">
+                <div class="ui stackable inverted divided grid">
+                    <div class="five wide column">
+                        <h4 class="ui inverted header">资源推荐</h4>
+                        <div class="ui inverted link list text-mute">
+                            暂无内容~~
+                        </div>
+                    </div>
+                    <div class="five wide column">
+                        <h4 class="ui inverted header">友情链接</h4>
+                        <div class="ui inverted link list">
+                            <a href="https://learnku.com" target="_blank">中文社区</a>
+                        </div>
+                        <div class="ui inverted link list">
+                            <a href="http://www.nginx.cn/doc/index.html" target="_blank">中文手册</a>
+                        </div>
+                    </div>
+                    <div class="five wide column">
+                        <h4 class="ui inverted header">其他信息</h4>
+                        <div class="ui inverted link list">
+                            <li><a class="item" href="./aboutus.html"><i class="fa fa-weixin" aria-hidden="true"></i>关注我们</a></li>
+                            <li><a class="item" href="mailto:'1169655050@qq.com'"><i class="fa fa-envelope" aria-hidden="true"></i> 联系我们</a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui inverted section divider"></div>
+                <div>
+                    <p style="font-size:0.9em; margin-top:20px;margin-bottom: -8px;color: rgb(137, 137, 140);" class="ui inverted signature">
+                        <a href="" target="_blank" style="color: inherit;">1169655050@qq.com</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Scripts -->
+    <script src="./js/learnku.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script type="text/javascript">
+    new Swiper('.swiper-container', {
+        autoplay: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    </script>
+</body>
+</html>
