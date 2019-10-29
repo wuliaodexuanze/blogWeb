@@ -70,55 +70,82 @@
     </nav> <!-- Page Content -->
     <div class="container">
         <div class="row">
-            <!-- Blog Entries Column -->
-            <div class="col-md-8">
-                <h2 class="my-4">
-                    <i class="fa fa-graduation-cap"></i> 优质文章
-                    <small>articles</small>
-                </h2>
-                <!-- Blog Post -->
-                <div class="card mb-4">
-                    <img class="card-img-top" src="images/750x300.png" alt="文章">
+            <!-- Post Content Column -->
+            <div class="col-lg-8">
+                <!-- Title -->
+                <h1 class="mt-4">文章标题</h1>
+                <!-- Author -->
+                <p class="lead">
+                    作者&nbsp;<a href="#">作者姓名</a>
+                </p>
+                <hr>
+                <!-- Date/Time -->
+                <p>发布时间&nbsp;<span>Posted on January 1, 2019 at 12:00 PM</span></p>
+                <hr>
+                <!-- Preview Image -->
+                <img class="img-fluid rounded" src="./images/750x300.png" alt="">
+                <hr>
+                <!-- Post Content -->
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
+                <blockquote class="blockquote">
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">Someone famous in
+                        <cite title="Source Title">Source Title</cite>
+                    </footer>
+                </blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+                <hr>
+                <!-- Comments Form -->
+                <div class="card my-4">
+                    <h5 class="card-header">发表评论:</h5>
                     <div class="card-body">
-                        <h3 class="card-title">文章标题</h3>
-                        <p class="card-text">这里是文章描述！</p>
-                        <a href="#" class="btn btn-primary btn-sm">阅读文章 &rarr;</a>
+                        <form>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">发布</button>
+                        </form>
                     </div>
-                    <div class="card-footer text-muted small text-muted">
-                        <div class="float-left">
-                            <a class="text-success" href="#"><i class="fa fa-folder-o"></i> Web Design</a>
-                            |
-                            <span>发布于7小时前</sapn>
-                                |
-                                <sapn>阅读<span>13000</span></span>
-                            |
-                            <a class="text-success" href="#">评论<span>100</span></a>
+                </div>
+                <!-- Single Comment -->
+                <div class="media mb-4">
+                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                    <div class="media-body">
+                        <h5 class="mt-0">用户名</h5>
+                        <p>用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容</p>
+                    </div>
+                </div>
+                <!-- Comment with nested comments -->
+                <div class="media mb-4">
+                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                    <div class="media-body">
+                        <div class="media-body">
+                            <h5 class="mt-0">用户名</h5>
+                            <p>用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容</p>
                         </div>
-                        <div class="float-right">
-                            <a class="text-muted" href=""><i class="fa fa-thumbs-up"></i></a> / <a class="text-muted" data-toggle="tooltip" data-placement="right" title="Tooltip on right" href="#">10小时前</a>
+                        <div class="media mt-4">
+                            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                            <div class="media-body">
+                                <div class="media-body">
+                                    <h5 class="mt-0">用户名</h5>
+                                    <p>用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media mt-4">
+                            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                            <div class="media-body">
+                                <div class="media-body">
+                                    <h5 class="mt-0">用户名</h5>
+                                    <p>用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容用户评论的内容</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Pagination -->
-                <nav>
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
             <!-- Sidebar Widgets Column -->
             <div class="col-md-4">

@@ -1,0 +1,19 @@
+/*!
+ * Start Bootstrap - Blog Home (https://startbootstrap.com/template-overviews/blog-home)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+.wrapper {
+	border-top: 4px solid #0069d9;
+}
+
+.read-day {
+	  border-top: 2px solid #f2711c
+}
+.index-tabs .nav-link.active {
+	border-bottom: 2px solid #1b1c1d;
+}

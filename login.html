@@ -1,158 +1,48 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="YvxBRXyfkAsuEUIdm4im2gi5YJt163SK6JV10NP8">
-    <title>首页</title>
-    <meta name="Description" content="前后端个人技术博客,技术分享学习">
-    <meta name="Keywords" content="HTML,css, javascript,php,python,web前端,后端,个人博客,技术分享,技术交流,博客,开发者博客,技术博客">
-    <meta name="author" content="jayafs" />
-    <!-- Styles -->
-    <link rel="stylesheet" href="./styles/learnku.css">
-    <link rel="stylesheet" href="./styles/prism.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/login.css">
 </head>
 
-<body class="pushable login-page">
-    <div class="pusher">
-        <div class="main container">
-            <nav class="ui main borderless menu top stackable" id="topnav">
-                <div class="ui container">
-                    <a href="/" class="item secondary">
-                        网站首页
-                    </a>
-                    <a href="http://www.learnku.net/blog/articles" class="item secondary">
-                        博客
-                    </a>
-                    <div class="ui simple item dropdown article stackable nav-user-item  secondary">
-                        教程 <i class="dropdown icon"></i>
-                        <div class="ui menu stackable">
-                            <a href="http://www.learnku.net/course/books" class="item">
-                                <i class="icon home"></i> 实战教程首页
-                            </a>
-                            <a class="item" href="http://www.learnku.net/course/books/1" style="padding-right: 36px!important;">
-                                <img class="ui avatar image" src="picture/1_1554300119_v8dvqmdgfr.jpg" style="width:20px;height:20px;margin-top: 0;margin-bottom: 0;">
-                                《Vue开发实战》
-                            </a>
-                            <a class="item" href="http://www.learnku.net/course/books/2" style="padding-right: 36px!important;">
-                                <img class="ui avatar image" src="picture/1_1554481257_f35shnzjuj.jpg" style="width:20px;height:20px;margin-top: 0;margin-bottom: 0;">
-                                《PHP使用手册》
-                            </a>
-                            <a class="item" href="http://www.learnku.net/course/books/4" style="padding-right: 36px!important;">
-                                <img class="ui avatar image" src="picture/1_1560523179_ddlseww5jc.jpg" style="width:20px;height:20px;margin-top: 0;margin-bottom: 0;">
-                                初识Go语言
-                            </a>
+<body>
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+            <div class="col-md-8 col-lg-6">
+                <div class="login d-flex align-items-center py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9 col-lg-8 mx-auto">
+                                <h3 class="login-heading mb-4">欢迎回来!</h3>
+                                <form>
+                                    <div class="form-label-group">
+                                        <input type="email" id="inputEmail" class="form-control" placeholder="邮箱" required autofocus>
+                                        <label for="inputEmail">邮箱</label>
+                                    </div>
+                                    <div class="form-label-group">
+                                        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+                                        <label for="inputPassword">密码</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">记住我</label>
+                                    </div>
+                                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">登录</button>
+                                    <div class="text-center">
+                                        <span class="small">没有账号？</span><a class="small" href="./register.html">去注册</a></div>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <a href="http://www.learnku.net/contact" class="item secondary">
-                        关于本站
-                    </a>
-                    <form class="ui fluid category search item secondary" id="header-search-form">
-                        <div class="ui icon input">
-                            <div class="ui compact selection dropdown header-search-left" id="header-search-left" tabindex="0">
-                                <select name="select" value="" id="header-search-left-value">
-                                    <option value="is_all">所有</option>
-                                    <option value="is_blog">文章</option>
-                                </select>
-                                <i class="dropdown icon"></i>
-                                <div class="text" id="header-select-text">文章</div>
-                                <div class="menu transition hidden" id="select-menu">
-                                    <div class="item" data-value="is_all">所有</div>
-                                    <div class="item" data-value="is_blog">文章</div>
-                                </div>
-                            </div>
-                            <input type="text" placeholder="搜索" autocomplete="off" name="q" class="prompt header-search-right">
-                            <i class="search icon"></i>
-                        </div>
-                    </form>
-                </div>
-            </nav>
-            <div class="ui middle aligned center aligned grid column-max-width-500">
-                <div class="column">
-                    <h2 class="ui teal image header">
-                        <div class="content">
-                            登录帐户
-                        </div>
-                    </h2>
-                    <form class="ui large form error">
-                        <div class="ui stacked segment">
-                            <div class="field">
-                            </div>
-                            <div class="field">
-                                <div class="ui left icon input">
-                                    <i class="user icon"></i>
-                                    <input type="email" name="email" placeholder="邮箱" value="" required autofocus>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui left icon input">
-                                    <i class="lock icon"></i>
-                                    <input type="password" name="password" placeholder="密码" required>
-                                </div>
-                            </div>
-                            <div class="field" style="display: flex;">
-                                <div class="ui checkbox">
-                                    <input type="checkbox" tabindex="0" name="remember" id="remember">
-                                    <label for="remember">记住我</label>
-                                </div>
-                            </div>
-                            <button class="ui fluid large teal submit button">登录</button>
-                            <!-- <div class="field" style="display: flex;padding-top: 10px;justify-content: center;">
-                                <a class="btn btn-link" href="http://www.learnku.net/password/reset">
-                                    忘记密码？
-                                </a>
-                            </div> -->
-                        </div>
-                        <div class="ui error message"></div>
-                    </form>
-                    <div class="ui message">
-                        创建一个用户? <a href="./register.html">注册</a>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="ui inverted vertical footer segment">
-            <div class="ui center aligned container">
-                <div class="ui stackable inverted divided grid">
-                    <div class="five wide column">
-                        <h4 class="ui inverted header">资源推荐</h4>
-                        <div class="ui inverted link list text-mute">
-                            暂无内容~~
-                        </div>
-                    </div>
-                    <div class="five wide column">
-                        <h4 class="ui inverted header">友情链接</h4>
-                        <!-- <div class="ui inverted link list">
-                            <a href="https://learnku.com" target="_blank">中文社区</a>
-                        </div>
-                        <div class="ui inverted link list">
-                            <a href="http://www.nginx.cn/doc/index.html" target="_blank">中文手册</a>
-                        </div> -->
-                        <div class="ui inverted link list text-mute">
-                            暂无内容~~
-                        </div>
-                    </div>
-                    <div class="five wide column">
-                        <h4 class="ui inverted header">其他信息</h4>
-                        <div class="ui inverted link list">
-                            <li><a class="item" href="./aboutus.html"><i class="fa fa-weixin" aria-hidden="true"></i>关注我们</a></li>
-                            <li><a class="item" href="mailto:'1169655050@qq.com'"><i class="fa fa-envelope" aria-hidden="true"></i> 联系我们</a></li>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui inverted section divider"></div>
-                <div>
-                    <p class="ui inverted signature">
-                        <a href="" target="_blank" style="color: inherit;">1169655050@qq.com</a>
-                    </p>
-                </div>
-            </div>
-        </footer>
     </div>
-    <script type="text/javascript" src="./js/zepto.min.js"></script>
-    <script src="./js/login.js"></script>
 </body>
 
 </html>

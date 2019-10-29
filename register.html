@@ -1,300 +1,53 @@
-﻿<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-    <meta name="csrf-token" content="rjPnXYN0b7NoRoxVssfQC9HAZGWZCqOptP8YF4v1">
-    
-    <title>LearnKu - LearnKu 编码学习区</title>
-    <meta name="Description" content="终身学习者的编程学习区">
-    <meta name="Keywords" content="学习区,学习去,编码知识区,博客,开发者博客">
-    <meta name="author" content="GucciLee" />
-
-      <!-- Styles -->
-    <link href="css/learnku_6.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/prism_6.css">
-    
-    <script type="text/javascript">
-        window.Config = {
-            'token': "rjPnXYN0b7NoRoxVssfQC9HAZGWZCqOptP8YF4v1",
-            'isApi': false,
-            'url': "https://www.learnku.net",
-            'routes': {
-                'images_domain': "http://images.learnku.net",
-                'cdns_domain': "http://cdns.learnku.net",
-                'upload_image': "http://www.learnku.net/api/images",
-                'api_search': "http://www.learnku.net/api/search",
-                'search': "http://www.learnku.net/search",
-            }
-        };
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>注册用户</title>
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/register.css">
 </head>
-<body class="pushable register-page">
-    
-    
-    <div class="pusher">
-        <div class="main container" style="min-height: 80vh;">
-            
-            <nav class="ui main borderless menu top stackable" id="topnav">
-    <div class="ui container">
-        <a href="/" class="item secondary">
-            网站首页
-        </a>
-        <a href="http://www.learnku.net/blog/articles" class="item secondary">
-            博客
-        </a>
-        <div class="ui simple item dropdown article stackable nav-user-item  secondary">
-            教程  <i class="dropdown icon"></i>
 
-            <div class="ui menu stackable">
-                <a href="http://www.learnku.net/course/books" class="item">
-                    <i class="icon home"></i> 实战教程首页
-                </a>
-                                                            <a class="item" href="http://www.learnku.net/course/books/1"
-                           style="padding-right: 36px!important;">
-                            <img class="ui avatar image" src="picture/1_1554300119_v8dvqmdgfr.jpg" style="width:20px;height:20px;margin-top: 0;margin-bottom: 0;">
-                            《Vue开发实战》
-                        </a>
-                                                                                <a class="item" href="http://www.learnku.net/course/books/2"
-                           style="padding-right: 36px!important;">
-                            <img class="ui avatar image" src="picture/1_1554481257_f35shnzjuj.jpg" style="width:20px;height:20px;margin-top: 0;margin-bottom: 0;">
-                            《PHP使用手册》
-                        </a>
-                                                                                                                    <a class="item" href="http://www.learnku.net/course/books/4"
-                           style="padding-right: 36px!important;">
-                            <img class="ui avatar image" src="picture/1_1560523179_ddlseww5jc.jpg" style="width:20px;height:20px;margin-top: 0;margin-bottom: 0;">
-                            初识Go语言
-                        </a>
-                                                </div>
-        </div>
-        <a href="http://www.learnku.net/contact" class="item secondary">
-            关于本站
-        </a>
-
-        
-        <form id="header-search-app" class="ui fluid category search item secondary"
-              data-api="http://www.learnku.net/api/search"
-              action="http://www.learnku.net/search" method="GET">
-            <div class="ui icon input" :class="{ 'loading' : loading }">
-                <select class="ui compact selection dropdown header-search-left"
-                        v-model="form.search_type"
-                        id="header-search-left">
-                    <option value="is_all">所有</option>
-                    <option selected="selected" value="is_blog">文章</option>
-                </select>
-                <input class="prompt header-search-right"
-                       type="text"
-                       placeholder="搜索"
-                       autocomplete="off"
-                       @input.stop="search($event)" @focus.stop="search($event)"
-                       name="q"
-                       data-value=""
-                       v-model="form.q">
-                <i class="search icon"></i>
-            </div>
-            <div class="results transition"
-                 :class="{ visible:  search_blog_results.length && search_has_results }"
-                 id="search-results">
-                <a class="result" v-for="item in search_blog_results" :href="item.href">
-                    <div class="content">
-                        <div class="title" v-text="item.title"></div>
-                        <div class="description" v-text="item.excerpt"></div>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card card-signin flex-row my-5">
+                    <div class="card-img-left d-none d-md-flex">
+                        <!-- Background image for card set in CSS! -->
                     </div>
-                </a>
-                <a :href="search_all_url" class="action"><i class="icon search"></i>搜全站</a>
-            </div>
-            <div class="results transition"
-                :class="{ visible: search_no_results }">
-                <div class="message empty">
-                    <div class="header">结果为空</div>
-                    <div class="description">搜索结果为空！</div>
-                    <a :href="search_all_url" class="action ui button mt-3 fluid">
-                        <i class="icon search"></i>
-                        搜全站
-                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">用户注册</h5>
+                        <form class="form-signin">
+                            <div class="form-label-group">
+                                <input type="text" id="inputUserame" class="form-control" placeholder="用户名" required autofocus>
+                                <label for="inputUserame">用户名</label>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="email" id="inputEmail" class="form-control" placeholder="邮箱" required>
+                                <label for="inputEmail">邮箱</label>
+                            </div>
+                            <hr>
+                            <div class="form-label-group">
+                                <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+                                <label for="inputPassword">密码</label>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="确认密码" required>
+                                <label for="inputConfirmPassword">确认密码</label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">注册</button>
+                            <div class="d-block text-center mt-2 small">已有账号？<a href="./login.html">去登录</a></div>
+                            <hr class="my-4">
+                            <button class="btn btn-lg btn-github btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Github登录</button>
+                            <button class="btn btn-lg btn-qq btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> QQ登录</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </form>
-
-        
-        <div class=" right menu stackable secondary">
-                            <div class="item rm-link-color">
-                    <a class="mr-4 no-pjax login_required" href="http://www.learnku.net/login"><i class="icon sign in "></i> 登录
-                    </a>
-                    <a class="no-pjax" href="http://www.learnku.net/register" style="margin-left: 10px;"><i
-                            class="icon user add "></i> 注册 </a>
-                </div>
-                    </div>
+        </div>
     </div>
-</nav>
-
-            
-            
-            
-              <div class="ui middle aligned center aligned grid column-max-width-500">
-    <div class="column">
-      <h2 class="ui teal image header">
-        <div class="content">
-          创建您的账户
-        </div>
-      </h2>
-      <form class="ui large form error" method="post" action="http://www.learnku.net/register">
-        <input type="hidden" name="_token" value="rjPnXYN0b7NoRoxVssfQC9HAZGWZCqOptP8YF4v1">
-        <div class="ui stacked segment">
-          <div class="field">
-            <div class="ui left icon input">
-              <i class="user icon"></i>
-              <input id="name" type="text"
-                     placeholder="姓名"
-                     name="name" value="" required autofocus>
-            </div>
-                      </div>
-          <div class="field">
-            <div class="ui left icon input">
-              <i class="envelope icon"></i>
-              <input id="email" type="email"
-                     placeholder="E-mail"
-                     name="email" value="" required>
-            </div>
-                      </div>
-          <div class="field">
-            <div class="ui left icon input">
-              <i class="lock icon"></i>
-              <input id="password" type="password"
-                     placeholder="密码"
-                     name="password" required>
-            </div>
-                      </div>
-          <div class="field">
-            <div class="ui left icon input">
-              <i class="lock icon"></i>
-              <input id="password-confirm" type="password" class="form-control"
-                     placeholder="确认密码"
-                     name="password_confirmation" required>
-            </div>
-          </div>
-          <div class="field" style="display: flex;flex-wrap: wrap;">
-            <div class="ui left icon input">
-              <i class="user secret icon"></i>
-              <input id="captcha" placeholder="验证码" name="captcha" required>
-            </div>
-            <img class="thumbnail captcha mt-3 mb-2 ui popover"
-                 style="position: relative;"
-                 data-position="right center"
-                 title="点击图片重新获取图片验证码"
-                 src="picture/6dc56fe641ad4330861d963fc6a5fc43.gif"
-                 onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">
-                      </div>
-
-          <button class="ui fluid large teal submit button">注册</button>
-        </div>
-      </form>
-    </div>
-  </div>
-        </div>
-
-        
-        <footer class="ui inverted vertical footer segment" style="max-height: 220px;">
-  <div class="ui center aligned container">
-    <div class="ui stackable inverted divided grid">
-      <div class="four wide column">
-        <h4 class="ui inverted header">关于 LearnKu</h4>
-        <div class="ui inverted link list lh-3">
-          LearnKu 是专为终身学习者定制的编程知识的网站。
-        </div>
-      </div>
-      <div class="four wide column">
-        <h4 class="ui inverted header">资源推荐</h4>
-        <div class="ui inverted link list text-mute">
-          暂无内容~~
-        </div>
-      </div>
-      <div class="four wide column">
-        <h4 class="ui inverted header">友情链接</h4>
-        <div class="ui inverted link list">
-          <a href="https://learnku.com" target="_blank">Laravel中文社区</a>
-        </div>
-        <div class="ui inverted link list">
-          <a href="http://www.nginx.cn/doc/index.html" target="_blank">Nginx 中文手册</a>
-        </div>
-      </div>
-      <div class="four wide column">
-        <h4 class="ui inverted header">其他信息</h4>
-        <div class="ui inverted link list">
-          <li><a class="item" href="http://www.learnku.net/contact"><i class="icon wechat" aria-hidden="true"></i> 联系站长</a></li>
-          <li><a class="item" href="mailto:'GucciLee@163.com'"><i class="icon envelope" aria-hidden="true"></i> 联系我们</a></li>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="ui inverted section divider"></div>
-    <div>
-
-      <p style="font-size:0.9em; margin-top:20px;margin-bottom: -8px;color: rgb(137, 137, 140);" class="ui inverted signature">
-        由 <a href="" target="_blank" style="color: inherit;">GucciLee</a> 编码 <span style="color: #e27575;font-size: 14px;">❤</span>
-      </p>
-    </div>
-  </div>
-</footer>
-    </div>
-
-    
-    <a class="circular ui icon button fixed feedback popover"
-       target="_blank"
-       data-content="点击加入 Q 群： 831174706"
-       data-variation="inverted"
-       data-position="left center"
-       href="//shang.qq.com/wpa/qunwpa?idkey=0b42857f3c9527bca4212a059168178044a892271938b75c99d779fcfd8b7968">
-        <i class="icon talk outline"></i>
-    </a>
-
-    
-    <!-- Scripts -->
-    <script type="text/javascript" src="js/learnku.js"></script>
-    
-    
-        
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?1ec6a674ead84d248649ad718fcb2c4d";
-            hm.async = true;
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-
-    
-    <div style="display: none;">
-        <script async type="text/javascript" src="js/z_stat.php"></script>
-    </div>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="js/57fd536ce7e7491fb0977ad32eb1b917.js"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-137692440-1');
-    </script>
-    	<script type='text/javascript'>
-    (function(m, ei, q, i, a, j, s) {
-        m[i] = m[i] || function() {
-            (m[i].a = m[i].a || []).push(arguments)
-        };
-        j = ei.createElement(q),
-            s = ei.getElementsByTagName(q)[0];
-        j.async = true;
-        j.charset = 'UTF-8';
-        j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
-        s.parentNode.insertBefore(j, s);
-    })(window, document, 'script', '_MEIQIA');
-    _MEIQIA('entId', 158672);
-</script>
 </body>
+
 </html>
