@@ -15,5 +15,6 @@ body {
 	  border-top: 2px solid #f2711c
 }
 .index-tabs .nav-link.active {
+	border-color: transparent;
 	border-bottom: 2px solid #1b1c1d;
 }
