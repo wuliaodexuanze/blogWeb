@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
  */
 body {
-  padding-top: 56px;
+  padding-top: 76px;
 }
 
 .wrapper {
@@ -17,4 +17,10 @@ body {
 .index-tabs .nav-link.active {
 	border-color: transparent;
 	border-bottom: 2px solid #1b1c1d;
+}
+
+.carousel-item .img, .card-img-top {
+	height: 300px;
+	width: 100%;
+	overflow: hidden;
 }

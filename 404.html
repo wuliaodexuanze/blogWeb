@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>jayafs</title>
-    <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/404.css">
+    <title>Blog</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="bookmark" href="./favicon.ico"/>
+    <link href="styles/domloader.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="plugins/jquery/jquery.min.js"><\/script>')</script>
+    <script src="js/domloader.js"></script>
+    <script type="text/javascript">
+        domloader.init();
+        domloader.icon ='./images/logo.png';
+        domloader.css('plugins/bootstrap/css/bootstrap.min.css');
+        domloader.css('styles/404.css');
+        domloader.html('#wrapper', './templates/404Tpl.html');
+    </script>
 </head>
-
-<body>
-    <div class="container-fluid">
-        <!-- 404 Error Text -->
-        <div class="text-center pt-5">
-            <div class="error mx-auto" data-text="404">404</div>
-            <p class="lead text-gray-800 mb-5">Page Not Found</p>
-            <p class="text-gray-500 mb-0">看起来你的访问出现了一点小故障...</p>
-            <a href="./index.html">← 回到主页</a>
-        </div>
-    </div>
-</body>
-
-</html>

@@ -1,48 +1,31 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>登录</title>
-    <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="styles/login.css">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Blog</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="bookmark" href="./favicon.ico"/>
+    <link href="styles/domloader.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="plugins/jquery/jquery.min.js"><\/script>')</script>
+    <script src="js/domloader.js"></script>
+    <script type="text/javascript">
+        domloader.init();
+        domloader.icon ='./images/logo.png';
+        domloader.css('plugins/bootstrap/css/bootstrap.min.css');
+        domloader.css('styles/login.css');
+        domloader.html('#wrapper', './templates/loginTpl.html');
+    </script>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <h1 class="pt-4 pb-5"><a class="text-dark text-decoration-none" href="./index.html">Blog</a></h1>
-        <div class="row no-gutter justify-content-center">
-            <div class="col-md-8 col-xl-6">
-                <div class="login d-flex pt-5">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-9 col-lg-8 mx-auto">
-                                <h3 class="login-heading mb-4">欢迎回来!</h3>
-                                <form>
-                                    <div class="form-label-group">
-                                        <input type="email" id="inputEmail" class="form-control" placeholder="邮箱" required autofocus>
-                                        <label for="inputEmail">邮箱</label>
-                                    </div>
-                                    <div class="form-label-group">
-                                        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
-                                        <label for="inputPassword">密码</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1">记住我</label>
-                                    </div>
-                                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">登录</button>
-                                    <div class="text-center">
-                                        <span class="small">没有账号？</span><a class="small" href="./register.html">去注册</a></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="wrapper">
     </div>
 </body>
 
 </html>
+

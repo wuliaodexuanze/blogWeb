@@ -6,256 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>jayafs</title>
-    <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles/css/font-awesome.min.css" rel="stylesheet">
-    <link href="styles/blog-home.css" rel="stylesheet">
+    <title>Blog</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="bookmark" href="./favicon.ico"/>
+    <link href="styles/domloader.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="plugins/jquery/jquery.min.js"><\/script>')</script>
+    <script src="js/domloader.js"></script>
+    <script type="text/javascript">
+        domloader.init();
+        domloader.icon ='./images/logo.png';
+        domloader.css('plugins/bootstrap/css/bootstrap.min.css');
+        domloader.css('styles/css/font-awesome.min.css');
+        domloader.css('styles/blog.css');
+        domloader.html('#wrapper', './templates/userCenterTpl.html');
+    </script>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top wrapper no-gutters">
-            <a class="navbar-brand" href="">Blog</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.html">
-                            <i class="fa fa-home"></i> 首页
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./blog.html">
-                            <i class="fa fa-book"></i> 博客
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./link.html">
-                            <i class="fa fa-link"></i> 友情链接
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./aboutUs.html">
-                            <i class="fa fa-globe"></i> 关于本站
-                        </a>
-                    </li>
-                </ul>
-                <div class="dropdown ml-auto">
-                    <a id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <img src="images/750x300.png" width="50" height="50" alt="头像" class="rounded-circle">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg-right dropdown-menu-left" aria-labelledby="dLabel">
-                        <a class="disabled dropdown-item"><i class="fa fa-user"></i>&nbsp;<span>用户名用户名</span></a>
-                        <div class="dropdown-divider"></div>
-                        <a href="./userCenter.html" class="dropdown-item text-primary"><i class="fa fa-cog"></i>&nbsp;<span>用户中心</span></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger"><i class="fa fa-sign-out"></i>&nbsp;退出登录</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+    <div id="wrapper">
     </div>
-    <div class="container-fluid">
-        <div class="row d-flex flex-md-row flex-column flex-column-reverse">
-            <!-- Blog Entries Column -->
-            <div class="col-md-8">
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="home">
-                        <h4 class="my-4">我的文章</h4>
-                        <!-- Project One -->
-                        <div class="row">
-                            <div class="col-md-7">
-                                <a href="#">
-                                    <img class="img-fluid rounded mb-3 mb-md-0" src="./images/750x300.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-5">
-                                <h4>文章1</h4>
-                                <p class="text-muted">文章描述</p>
-                                <a class="btn btn-outline-primary btn-sm" href="#">查看文章</a>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                        <hr>
-                        <!-- Project Two -->
-                        <div class="row">
-                            <div class="col-md-7">
-                                <a href="#">
-                                    <img class="img-fluid rounded mb-3 mb-md-0" src="./images/750x300.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-5">
-                                <h4>文章1</h4>
-                                <p class="text-muted">文章描述</p>
-                                <a class="btn btn-primary btn-sm" href="#">查看文章</a>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                        <hr>
-                        <!-- Pagination -->
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="profile">
-                        <h4 class="my-4">我的收藏</h4>
-                        <!-- Project One -->
-                        <div class="row">
-                            <div class="col-md-7">
-                                <a href="#">
-                                    <img class="img-fluid rounded mb-3 mb-md-0" src="./images/750x300.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-5">
-                                <h4>文章1</h4>
-                                <p class="text-muted">文章描述</p>
-                                <a class="btn btn-primary btn-sm" href="#">查看文章</a>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                        <hr>
-                        <!-- Project Two -->
-                        <div class="row">
-                            <div class="col-md-7">
-                                <a href="#">
-                                    <img class="img-fluid rounded mb-3 mb-md-0" src="./images/750x300.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-5">
-                                <h4>文章1</h4>
-                                <p class="text-muted">文章描述</p>
-                                <a class="btn btn-primary btn-sm" href="#">查看文章</a>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                        <hr>
-                        <!-- Pagination -->
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="comment">
-                        <h4 class="my-4">我的评论</h4>
-                        <!-- Project One -->
-                        <div class="row">
-                            <div class="col-md-7">
-                                <a href="#">
-                                    <img class="img-fluid rounded mb-3 mb-md-0" src="./images/750x300.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-5">
-                                <h4>文章1</h4>
-                                <p class="text-muted">文章描述</p>
-                                <a class="btn btn-primary btn-sm" href="#">查看文章</a>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                        <hr>
-                        <!-- Project Two -->
-                        <div class="row">
-                            <div class="col-md-7">
-                                <a href="#">
-                                    <img class="img-fluid rounded mb-3 mb-md-0" src="./images/750x300.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-5">
-                                <h4>文章1</h4>
-                                <p class="text-muted">文章描述</p>
-                                <a class="btn btn-primary btn-sm" href="#">查看文章</a>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                        <hr>
-                        <!-- Pagination -->
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <!-- Sidebar Widgets Column -->
-            <div class="col-md-4">
-                <div class="card my-4">
-                    <div class="card-body read-day">
-                        每日记录
-                    </div>
-                </div>
-                <!-- Side Widget -->
-                <div class="card my-4">
-                    <div class="card-body">
-                        <ul class="nav nav-pills flex-column">
-                            <li role="presentation"><a class="nav-link active" href="#home" aria-controls="home" role="tab" data-toggle="tab">我的文章</a></li>
-                            <li role="presentation"><a class="nav-link" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">我的收藏</a></li>
-                            <li role="presentation"><a class="nav-link" href="#comment" aria-controls="comment" role="tab" data-toggle="tab">我的评论</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-    <!-- Footer -->
-    <footer class="py-4 bg-light">
-        <div class="container-fluid">
-            <p class="m-0 text-center text-black-50">Copyright &copy; <a class="text-info" href="mailto:#">116965505@qq.com</a> 2019</p>
-        </div>
-        <!-- /.container -->
-    </footer>
-    <!-- Bootstrap core JavaScript -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script>window.jQuery || document.write('<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"><\/script>')</script>
 </body>
 
 </html>
