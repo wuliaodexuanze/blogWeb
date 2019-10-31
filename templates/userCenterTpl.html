@@ -42,8 +42,6 @@
             </div>
         </div>
     </nav>
-</div>
-<div class="container-fluid">
     <div class="row d-flex flex-md-row flex-column flex-column-reverse">
         <!-- Blog Entries Column -->
         <div class="col-md-9 col-xl-9">
@@ -60,7 +58,7 @@
                         <div class="col-md-5">
                             <h4>文章1</h4>
                             <p class="text-muted">文章描述</p>
-                            <a class="btn btn-primary btn-sm" href="#">查看文章</a>
+                            <a class="btn btn-outline-primary btn-sm" href="#">查看文章</a>
                         </div>
                     </div>
                     <!-- /.row -->
@@ -75,7 +73,7 @@
                         <div class="col-md-5">
                             <h4>文章1</h4>
                             <p class="text-muted">文章描述</p>
-                            <a class="btn btn-primary btn-sm" href="#">查看文章</a>
+                            <a class="btn btn-outline-primary btn-sm" href="#">查看文章</a>
                         </div>
                     </div>
                     <!-- /.row -->
@@ -113,7 +111,7 @@
                         <div class="col-md-5">
                             <h4>文章1</h4>
                             <p class="text-muted">文章描述</p>
-                            <a class="btn btn-primary btn-sm" href="#">查看文章</a>
+                            <a class="btn btn-outline-primary btn-sm" href="#">查看文章</a>
                         </div>
                     </div>
                     <!-- /.row -->
@@ -128,7 +126,7 @@
                         <div class="col-md-5">
                             <h4>文章1</h4>
                             <p class="text-muted">文章描述</p>
-                            <a class="btn btn-primary btn-sm" href="#">查看文章</a>
+                            <a class="btn btn-outline-primary btn-sm" href="#">查看文章</a>
                         </div>
                     </div>
                     <!-- /.row -->
@@ -154,6 +152,63 @@
                         </ul>
                     </nav>
                 </div>
+                <div role="tabpanel" class="tab-pane" id="info">
+                    <h4 class="my-4">用户信息</h4>
+                    <div class="card">
+                        <div class="row card-body">
+                            <div class="col-md-8">
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="base1">
+                                        <div class="row">
+                                            <div class="col-sm-3 mb-2">
+                                                <img class="rounded-circle" width="150" height="150" src="../images/750x300.png">
+                                            </div>
+                                            <div class="col-sm-9 d-flex align-items-center">
+                                                <button type="button" class="btn btn-outline-success">更换头像</button>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <form>
+                                            <div class="form-group row">
+                                                <label for="staticEmail" class="col-sm-3 col-form-label">昵称</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" id="staticEmail" value="昵称">
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="form-group row">
+                                                <label for="inputPassword" class="col-sm-3 col-form-label">电子邮件</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="base2">
+                                        <form>
+                                            <div class="form-group row">
+                                                <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">座右铭</label>
+                                                <div class="col-sm-9">
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-pills flex-column">
+                                            <li role="presentation"><a class="nav-link active" href="#base1" aria-controls="base1" role="tab" data-toggle="tab">基本信息</a></li>
+                                            <li role="presentation"><a class="nav-link" href="#base2" aria-controls="base2" role="tab" data-toggle="tab">基础设置</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Sidebar Widgets Column -->
@@ -169,18 +224,11 @@
                     <ul class="nav nav-pills flex-column">
                         <li role="presentation"><a class="nav-link active" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">我的收藏</a></li>
                         <li role="presentation"><a class="nav-link" href="#comment" aria-controls="comment" role="tab" data-toggle="tab">我的评论</a></li>
+                        <li role="presentation"><a class="nav-link" href="#info" aria-controls="info" role="tab" data-toggle="tab">信息设置</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- /.row -->
 </div>
 <!-- /.container -->
-<!-- Footer -->
-<footer class="py-4 bg-light">
-    <div class="container-fluid">
-        <p class="m-0 text-center text-black-50">Copyright &copy; <a class="text-info" href="mailto:#">116965505@qq.com</a> 2019</p>
-    </div>
-    <!-- /.container -->
-</footer>
